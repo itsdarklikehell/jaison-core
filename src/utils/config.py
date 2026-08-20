@@ -82,8 +82,11 @@ class Config(metaclass=Singleton):
         self.current_config = "Unsaved"
             
     def save(self, config_name: str):
-        with open(portable_path(os.path.join(self.CONFIG_DIR, config_name))) as f:
-            yaml.dump(self.get_config_dict(),f)
+        # Ensure a .yaml extension so load_from_name() can find it again
+        if not config_name.endswith('.yaml'):
+            config_name = config_name + '.yaml'
+        with open(portable_path(os.path.join(self.CONFIG_DIR, config_name)), 'w') as f:
+            yaml.dump(self.get_config_dict(), f)
             
     def get_config_dict(self):
         return vars(self)

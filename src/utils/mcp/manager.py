@@ -333,7 +333,7 @@ Below is a list of descriptions for all available tool:\n
                         result = parse_tool_result(result.contents[0])
                         break
             except Exception as err:
-                logging.critical("Error occured during MCP", exc_info=True)
+                logging.critical("Error occurred during MCP", exc_info=True)
                 result = "Attempt to use MCP tool failed due to {}".format(str(err))
             if result:
                 result_list.append((tool_name, result))

@@ -82,7 +82,7 @@ async def _request_job(job_type: JobType):
         job_id = await JAIson().create_job(job_type, **request_data)
         return create_response(200, f"{job_type} job created", {"job_id": job_id}, cors_header)
     except Exception as err:
-        logging.error(f"Error occured for {job_type} API request", stack_info=True, exc_info=True)
+        logging.error(f"Error occurred for {job_type} API request", stack_info=True, exc_info=True)
         return create_response(500, str(err), {}, cors_header)
 
 # Main response pipeline
