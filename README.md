@@ -135,7 +135,7 @@ Example usage: `python ./src/main.py --config=example`
 
 ## Developer Guide
 
-See the specification for building applciations for Project J.A.I.son, creating custom integrations, and configuration tips below:
+See the specification for building applications for Project J.A.I.son, creating custom integrations, and configuration tips below:
 
 - [REST API spec](api.yaml)
 - [Development guide](DEVELOPER.md)
