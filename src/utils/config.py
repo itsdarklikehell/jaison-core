@@ -1,6 +1,6 @@
 import os
 import yaml
-from typing import get_type_hints, List, Dict
+from typing import get_type_hints
 from .helpers.singleton import Singleton
 from .helpers.path import portable_path
 from .args import args

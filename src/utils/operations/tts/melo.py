@@ -1,12 +1,9 @@
 import wave
 from io import BytesIO
 from melo.api import TTS
-import logging
-import numpy as np
 import torch
 import soundfile
 
-from utils.config import Config
 
 from .base import TTSOperation
 

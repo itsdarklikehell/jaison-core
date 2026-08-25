@@ -1,4 +1,3 @@
-from utils.config import Config
 from utils.helpers.audio import pitch_audio
 
 from .base import FilterAudioOperation

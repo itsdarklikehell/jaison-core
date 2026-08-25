@@ -3,7 +3,6 @@ import wave
 import requests
 import base64
 
-from utils.config import Config
 from utils.processes import ProcessManager, ProcessType
 
 from .base import STTOperation

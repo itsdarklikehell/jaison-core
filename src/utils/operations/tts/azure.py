@@ -3,7 +3,6 @@ import wave
 from io import BytesIO
 import azure.cognitiveservices.speech as speechsdk
 
-from utils.config import Config
 
 from .base import TTSOperation
 

@@ -7,10 +7,9 @@ Adds to chunk:
 - content: (str) Generated text
 '''
 
-from typing import Dict, List, Any, AsyncGenerator
+from typing import Dict, Any, AsyncGenerator
 
 from ..base import Operation
-from utils.prompter.message import Message
 
 class T2TOperation(Operation):
     def __init__(self, op_id: str):

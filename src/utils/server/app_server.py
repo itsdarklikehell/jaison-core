@@ -6,7 +6,6 @@ import logging
 from utils.args import args
 from utils.helpers.singleton import Singleton
 from utils.jaison import JAIson, JobType, NonexistantJobException
-from utils.config import Config
 from utils.helpers.observer import BaseObserverClient
 from .common import create_response, create_preflight
 
@@ -66,9 +65,9 @@ async def cancel_job():
         request_data = await request.get_json()
         assert 'job_id' in request_data
         return create_response(200, f"Job flagged for cancellation", await JAIson().cancel_job(request_data['job_id'], request_data.get('reason')), cors_header)
-    except NonexistantJobException as err:
+    except NonexistantJobException:
         return create_response(400, f"Job ID does not exist or already finished", {}, cors_header)
-    except AssertionError as err:
+    except AssertionError:
         return create_response(400, f"Request missing job_id", {}, cors_header)
     except Exception as err:
         return create_response(500, str(err), {}, cors_header)
@@ -242,7 +241,7 @@ async def start_web_server(): # TODO launch application plugins here as well
         await JAIson().start()
         SocketServerObserver()
         await app.run_task(host=args.host, port=args.port)
-    except Exception as err:
+    except Exception:
         logging.error("Stopping server due to exception", exc_info=True)
     finally:    
         await JAIson().stop()

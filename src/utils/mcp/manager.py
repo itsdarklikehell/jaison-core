@@ -4,7 +4,7 @@ import datetime
 import re
 import urllib
 import logging
-from typing import List, Dict
+from typing import Dict
 from mcp import ClientSession, StdioServerParameters, types
 from mcp.client.stdio import stdio_client
 from mcp.types import (
@@ -208,7 +208,7 @@ class MCPClient:
                     model="embedding",
                     stopReason="endTurn",
                 )
-        except Exception as err:
+        except Exception:
             logging.error("MCP sampler encountered an issue", exc_info=True)
             return ""
         
