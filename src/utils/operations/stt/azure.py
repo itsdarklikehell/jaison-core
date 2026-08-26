@@ -1,9 +1,7 @@
 import os
 import asyncio
 import azure.cognitiveservices.speech as speechsdk
-import logging
 
-from utils.config import Config
 
 from .base import STTOperation
 

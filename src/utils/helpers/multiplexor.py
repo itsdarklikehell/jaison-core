@@ -1,5 +1,4 @@
 from typing import List, Callable, AsyncGenerator, Dict, Tuple
-import logging
 import asyncio
 
 async def _queue_to_generator(queue: asyncio.Queue, queue_event: asyncio.Event, finish_event: asyncio.Event):

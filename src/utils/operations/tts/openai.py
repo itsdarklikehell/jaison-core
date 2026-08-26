@@ -2,7 +2,6 @@ import wave
 from io import BytesIO
 from openai import AsyncOpenAI
 
-from utils.config import Config
 
 from .base import TTSOperation
 

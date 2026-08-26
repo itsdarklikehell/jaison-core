@@ -4,7 +4,7 @@ import datetime
 import re
 import urllib
 import logging
-from typing import List, Dict
+from typing import Dict
 from mcp import ClientSession, StdioServerParameters, types
 from mcp.client.stdio import stdio_client
 from mcp.types import (
@@ -208,7 +208,7 @@ class MCPClient:
                     model="embedding",
                     stopReason="endTurn",
                 )
-        except Exception as err:
+        except Exception:
             logging.error("MCP sampler encountered an issue", exc_info=True)
             return ""
         
@@ -333,7 +333,7 @@ Below is a list of descriptions for all available tool:\n
                         result = parse_tool_result(result.contents[0])
                         break
             except Exception as err:
-                logging.critical("Error occured during MCP", exc_info=True)
+                logging.critical("Error occurred during MCP", exc_info=True)
                 result = "Attempt to use MCP tool failed due to {}".format(str(err))
             if result:
                 result_list.append((tool_name, result))

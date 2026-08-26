@@ -1,7 +1,6 @@
 from fish_audio_sdk import AsyncWebSocketSession, TTSRequest
 import os
 
-from utils.config import Config
 
 from .base import TTSOperation
 

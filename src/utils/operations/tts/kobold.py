@@ -2,7 +2,6 @@ import requests
 from io import BytesIO
 import wave
 
-from utils.config import Config
 from utils.processes import ProcessManager, ProcessType
 
 from .base import TTSOperation
